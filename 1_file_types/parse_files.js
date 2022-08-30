@@ -52,5 +52,3 @@ const parseYAML = () => {
     const parsedYAML = yaml.load(fs.readFileSync(p, 'utf-8'));
     return parsedYAML;
 };
-console.log(__dirname)
-console.log(parseTXT())
