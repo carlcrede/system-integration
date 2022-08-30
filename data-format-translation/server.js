@@ -1,5 +1,5 @@
 import express from "express";
-import parser from '../filetypes/parse_files.js';
+import parser from '../1_file_types/parse_files.js';
 
 const app = express();
 
