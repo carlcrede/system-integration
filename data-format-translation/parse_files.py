@@ -1,10 +1,10 @@
 import yaml, csv, json, xmltodict
 
-yaml_file = '1_file_types/me.yaml'
-csv_file = '1_file_types/me.csv'
-json_file = '1_file_types/me.json'
-xml_file = '1_file_types/me.xml'
-txt_file = '1_file_types/me.txt'
+yaml_file = 'filetypes/me.yaml'
+csv_file = 'filetypes/me.csv'
+json_file = 'filetypes/me.json'
+xml_file = 'filetypes/me.xml'
+txt_file = 'filetypes/me.txt'
 
 def parse_yaml(file_path=yaml_file):
     with open(file=file_path, mode='r') as f:
@@ -31,7 +31,7 @@ def parse_xml(file_path=xml_file):
 def parse_txt(file_path=txt_file):
     parsed_txt = {}
     with open(file_path, mode='r') as f:
-        rows = f.readlines()
+        rows = [ r.strip() for r in f.readlines() ]
         for row in rows:
             row = row.split('=')
             if len(row[1].split(',')) > 1:
