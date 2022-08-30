@@ -1,11 +1,15 @@
-const fs = require('fs');
-const Papa = require('papaparse');
-const path = require('path');
-const { XMLParser } = require('fast-xml-parser');
-const yaml = require('js-yaml')
+import Papa from 'papaparse';
+import path from 'path';
+import {fileURLToPath} from 'url';
+import { XMLParser } from 'fast-xml-parser';
+import yaml from 'js-yaml';
+import * as fs from 'fs';
 
-const parseCSV = async () => {
-    const p = path.resolve('me.csv');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+export const parseCSV = async () => {
+    const p = path.resolve(__dirname, 'me.csv');
     const file = fs.readFileSync(p, 'utf-8');
     
     const res = Papa.parse(file, {
@@ -15,14 +19,14 @@ const parseCSV = async () => {
     return res.data;
 };
 
-const parseJSON = () => {
+export const parseJSON = () => {
     const p = path.resolve(__dirname, 'me.json');
     const file = fs.readFileSync(p);
     const parsedJSON = JSON.parse(file);
     return parsedJSON;
 };
 
-const parseXML = () => {
+ export const parseXML = () => {
     const p = path.resolve(__dirname, 'me.xml');
     const file = fs.readFileSync(p, { encoding: 'utf-8' });
     const parser = new XMLParser();
@@ -30,7 +34,7 @@ const parseXML = () => {
     return parsedXML;
 };
 
-const parseTXT = () => {
+export const parseTXT = () => {
     const p = path.resolve(__dirname, 'me.txt');
     const file = fs.readFileSync(p, { encoding: 'utf-8' });
     
@@ -47,8 +51,16 @@ const parseTXT = () => {
     return obj;
 };
 
-const parseYAML = () => {
+export const parseYAML = () => {
     const p = path.resolve(__dirname, 'me.yaml');
     const parsedYAML = yaml.load(fs.readFileSync(p, 'utf-8'));
     return parsedYAML;
 };
+
+export default {
+    parseXML,
+    parseJSON,
+    parseCSV,
+    parseTXT,
+    parseYAML
+}
