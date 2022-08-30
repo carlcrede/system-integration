@@ -1,0 +1,4 @@
+name=Christian
+age=26
+likesProgramming=true
+hobbies=craft beer,programming,music
