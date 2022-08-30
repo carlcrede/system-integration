@@ -4,7 +4,7 @@ const app = express();
 
 app.get('/timestamp', (req, res) => {
     const timestamp = new Date().toISOString();
-    res.send({ 'timestamp (ISO 8601)': timestamp });
+    res.send({ 'Timestamp (ISO 8601)': timestamp });
 });
 
 const server = app.listen(8002, (err) => {
