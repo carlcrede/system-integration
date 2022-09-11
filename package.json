@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/carlcrede/system-integration#readme",
   "dependencies": {
+    "axios": "^0.27.2",
     "express": "^4.18.1",
     "fast-xml-parser": "^4.0.9",
     "js-yaml": "^4.1.0",
