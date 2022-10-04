@@ -1,10 +1,11 @@
 import yaml, csv, json, xmltodict
+import os
 
-yaml_file = '1_file_types/me.yaml'
-csv_file = '1_file_types/me.csv'
-json_file = '1_file_types/me.json'
-xml_file = '1_file_types/me.xml'
-txt_file = '1_file_types/me.txt'
+yaml_file = os.path.join(os.getcwd(),'me.yaml')
+csv_file = os.path.join(os.getcwd(),'me.csv')
+json_file = os.path.join(os.getcwd(),'me.json')
+xml_file = os.path.join(os.getcwd(),'me.xml')
+txt_file = os.path.join(os.getcwd(),'me.txt')
 
 def parse_yaml(file_path=yaml_file):
     with open(file=file_path, mode='r') as f:

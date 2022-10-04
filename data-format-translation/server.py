@@ -1,7 +1,9 @@
-from bottle import run, get
 from parse_files import parse_csv, parse_json, parse_txt, parse_xml, parse_yaml
+from fastapi import FastAPI
+import uvicorn
+app = FastAPI(debug=True)
 
-@get('/files')
+@app.get('/files')
 def parse_and_read_files():
     _csv = parse_csv()
     _json = parse_json()
@@ -18,4 +20,5 @@ def parse_and_read_files():
         }
     }
 
-run(port=8001, debug=True, reloader=True)
+if __name__ == '__main__':
+    uvicorn.run(app, port=8001, debug=True)

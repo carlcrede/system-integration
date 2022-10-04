@@ -1,0 +1,1 @@
+{"openapi":"3.0.2","info":{"title":"FastAPI","version":"0.1.0"},"paths":{"/files":{"get":{"summary":"Parse And Read Files","operationId":"parse_and_read_files_files_get","responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{}}}}}}}}}

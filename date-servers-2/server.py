@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 import datetime, uvicorn, requests
 
-app = FastAPI(debug=True)
+app = FastAPI(debug=True,)
 
 @app.get('/timestamp')
 def _():

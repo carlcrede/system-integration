@@ -1,0 +1,10 @@
+<me>
+    <name>Christian</name>
+    <age>26</age>
+    <likesProgramming>true</likesProgramming>
+    <hobbies>
+        <hobby>Music</hobby>
+        <hobby>Craft beer</hobby>
+        <hobby>Programming</hobby>
+    </hobbies>
+</me>

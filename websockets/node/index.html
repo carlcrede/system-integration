@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="msg" type="text" value="">
+    <label for="msg">Enter message: </label>
+    <button id="sendMsg">Send message</button>
+    <script>
+        const ws = new WebSocket(`ws://6.tcp.eu.ngrok.io:10372`);
+        const msgInput = document.getElementById('msg');
+        const msgBtn = document.getElementById('sendMsg');
+        
+        const sendMsg = msg => {
+            ws.send(msgInput.value);
+            msgInput.value = '';
+        };
+
+        msgBtn.onclick = e => sendMsg(msgInput.value);
+
+        ws.onopen = event => {
+            ws.send('I am connected :)');
+            console.log('Connected to the wss!');
+        }
+
+    </script>
+</body>
+</html>
