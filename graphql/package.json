@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev:simple": "nodemon app_simple.js"
+    "dev:simple": "nodemon app_simple.js",
+    "dev": "nodemon app_movies.js"
   },
   "keywords": [],
   "author": "",
